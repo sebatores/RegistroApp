@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="colorheader">
+    <ion-title #titulo class="ion-text ion-text-center font-size-16 header-titulo">
+      <img src="../../../assets/img/Logo_DuocUC.png" alt="Logo" class="header-logo">
+      <p>Sistema de Asistencia DUOC</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="book">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title #itemCardTitulo>Recuperar Respuesta Secreta</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p #itemCardSubTitulo class="intruccion">{{ usuario.preguntaSecreta }}</p>
+        <ion-list>
+          <ion-item>
+            <ion-input [(ngModel)]="respuesta" label="Ingresa tu respuesta" labelPlacement="floating" type="text"></ion-input>
+          </ion-item>
+          <ion-grid>
+            <ion-row class="ion-button-center">
+              <ion-col size="8">
+                <ion-button #itemBoton (click)="validarRespuestaSecreta()">Ingrese su Respuesta</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+      </ion-card-content>
+    </ion-card> 
+
+    <div class="boton-iniciar-sesion">
+      <ion-label>
+        <a routerLink="">Iniciar sesión</a>
+      </ion-label>
+    </div>
+  </div>
+</ion-content>

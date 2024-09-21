@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar class="colorheader">
+    <ion-title #titulo class="ion-text ion-text-left font-size-16 header-titulo">
+      <img src="../../../assets/img/Logo_DuocUC.png" alt="Logo" class="header-logo">
+      <span class="header-span">Sistema de Asistencia DUOC</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content [fullscreen]="true">
+  
+  <div class="book">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title #cardTitulo>
+          <h1>¡Bienvenido(a)!</h1>
+          <br>
+          <ion-label>
+            {{ usuario.nombre }} {{ usuario.apellido }}
+          </ion-label>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-label class="ion-card-label">
+          Escanea el código QR para registrar tu asistencia a clases
+        </ion-label>
+        <div class="video-qr">
+          <video class="tag-video" #video [hidden]="!escaneando"></video>
+          <canvas #canvas hidden></canvas>
+        </div>
+        
+        
+        <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+          <ion-icon slot="start" name="videocam-outline"></ion-icon>
+          Comenzar Escaneo QR
+        </ion-button>
+      
+        <ion-button *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+          <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+          Detener Escaneo QR
+        </ion-button>
+      </ion-card-content>
+      
+    </ion-card>
+
+  </div>
+
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons class="toolbar-buttons">
+
+      <ion-segment-button class="toolbar-button" (click)="navegar('/inicio')">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button class="toolbar-button" (click)="navegar('/miclase')">
+        <ion-icon name="school-outline"></ion-icon>
+        <ion-label>Mi clase</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button class="toolbar-button" (click)="navegar('/misdatos')">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Mis datos</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button class="toolbar-button" (click)="navegar('/login')">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <ion-label>Salir</ion-label>
+      </ion-segment-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+

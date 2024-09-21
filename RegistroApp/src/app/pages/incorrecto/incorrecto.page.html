@@ -1,0 +1,32 @@
+<ion-toolbar class="colorheader">
+  <ion-title #titulo class="ion-text ion-text-left font-size-16 header-titulo">
+    <img src="../../../assets/img/Logo_DuocUC.png" alt="Logo" class="header-logo">
+    <span class="header-span">Sistema de Asistencia DUOC</span>
+  </ion-title>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="fondo-imagen">
+  <div class="book">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title #itemCardTitulo>Respuesta Incorrecta</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <img 
+          alt="Imagen de error" 
+          src="../../../assets/img/incorrecto.webp" 
+          height="150px" 
+          width="150px" 
+        />
+        <p style="color: red; font-weight: bold;">La respuesta ingresada es incorrecta.</p>
+        <ion-grid>
+          <ion-row class="ion-button-center">
+            <ion-col size="8">
+              <ion-button expand="block" class="boton-animado" (click)="redirigirAlLogin()">Volver al Login</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

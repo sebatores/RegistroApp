@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-toolbar class="colorheader">
+    <ion-title #titulo class="ion-text ion-text-left font-size-16 header-titulo">
+      <img src="../../../assets/img/Logo_DuocUC.png" alt="Logo" class="header-logo">
+      <span class="header-span">Sistema de Asistencia DUOC</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  <div class="book">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title #itemCardTitulo>Datos de la asignatura</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          
+          <div *ngIf="datosQR">
+
+            <ion-item #itemSede>
+              <ion-input labelPlacement="floating" label="Sede" [value]="asistencia.sede" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemSigla>
+              <ion-input labelPlacement="floating" label="Sigla" [value]="asistencia.idAsignatura" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemSeccion>
+              <ion-input labelPlacement="floating" label="Seccion" [value]="asistencia.seccion" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemNombreAsignatura>
+              <ion-input labelPlacement="floating" label="Nombre Asignatura" [value]="asistencia.nombreAsignatura" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemNombreProfesor>
+              <ion-input labelPlacement="floating" label="Nombre Profesor" [value]="asistencia.nombreProfesor" readonly></ion-input>
+            </ion-item>
+            
+            <ion-item #itemDia>
+              <ion-input labelPlacement="floating" label="Dia" [value]="asistencia.dia" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemBloqueInicio>
+              <ion-input labelPlacement="floating" label="Bloque Inicio" [value]="asistencia.bloqueInicio" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemBloqueTermino>
+              <ion-input labelPlacement="floating" label="Bloque Termino" [value]="asistencia.bloqueTermino" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemHoraInicio>
+              <ion-input labelPlacement="floating" label="Hora Inicio" [value]="asistencia.horaInicio" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemHoraTermino>
+              <ion-input labelPlacement="floating" label="Hora Termino" [value]="asistencia.horaFin" readonly></ion-input>
+            </ion-item>
+
+          </div>
+
+          <div *ngIf="!datosQR">
+
+            <ion-item #itemSede>
+              <ion-input labelPlacement="floating" label="Sede" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemSigla>
+              <ion-input labelPlacement="floating" label="Sigla" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemSeccion>
+              <ion-input labelPlacement="floating" label="Seccion" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemNombreAsignatura>
+              <ion-input labelPlacement="floating" label="Nombre Asignatura" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemNombreProfesor>
+              <ion-input labelPlacement="floating" label="Nombre Profesor" readonly></ion-input>
+            </ion-item>
+            
+            <ion-item #itemDia>
+              <ion-input labelPlacement="floating" label="Dia" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemBloqueInicio>
+              <ion-input labelPlacement="floating" label="Bloque Inicio" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemBloqueTermino>
+              <ion-input labelPlacement="floating" label="Bloque Termino" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemHoraInicio>
+              <ion-input labelPlacement="floating" label="Hora Inicio" readonly></ion-input>
+            </ion-item>
+  
+            <ion-item #itemHoraTermino>
+              <ion-input labelPlacement="floating" label="Hora Termino" readonly></ion-input>
+            </ion-item>
+
+          </div>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons class="toolbar-buttons">
+
+      <ion-segment-button class="toolbar-button" (click)="navegar('/inicio')">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button class="toolbar-button" (click)="navegar('/miclase')">
+        <ion-icon name="school-outline"></ion-icon>
+        <ion-label>Mi clase</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button class="toolbar-button" (click)="navegar('/misdatos')">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Mis datos</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button class="toolbar-button" (click)="navegar('/login')">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <ion-label>Salir</ion-label>
+      </ion-segment-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
